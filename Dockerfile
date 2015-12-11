@@ -4,6 +4,9 @@ MAINTAINER Koen Janssen <koen253janssen@gmail.com>
 # Keep image updated
 ENV REFRESHED_AT 2015-10-22-23-15Z
 
+#Create Shared volume for Teamspeak Server Files
+VOLUME ["/data/teamspeak"]
+
 # Add repositories and update base
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" > /etc/apt/sources.list \
   && echo "deb http://archive.ubuntu.com/ubuntu/ wily-updates main restricted universe multiverse" >> /etc/apt/sources.list \
