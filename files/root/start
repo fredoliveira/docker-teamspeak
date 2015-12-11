@@ -23,8 +23,8 @@ fi
 
 # Start
 
-# change owner to minecraft
-chown -R minecraft.minecraft /$SPIGOT_HOME/
+# Change permission folder to make sure container can write to the volume
+chmod 775 -R /data/teamspeak 
 
 cd /opt/teamspeak
 exec /usr/bin/env LD_LIBRARY_PATH="/opt/teamspeak" /opt/teamspeak/ts3server_linux_amd64 inifile=/data/ts3server.ini logpath=/data/logs disable_db_logging=0
