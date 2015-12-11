@@ -1,5 +1,5 @@
 FROM docker.io/ubuntu:wily
-MAINTAINER Edgard Castro <castro@edgard.org>
+MAINTAINER Koen Janssen <koen253janssen@gmail.com>
 
 # Keep image updated
 ENV REFRESHED_AT 2015-10-22-23-15Z
