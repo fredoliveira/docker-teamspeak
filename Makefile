@@ -1,5 +1,5 @@
 NAME=teamspeak
-REPO=edgard/$(NAME)
+REPO=skardoska/$(NAME)
 
 .PHONY: build start test test-stop run push
 
