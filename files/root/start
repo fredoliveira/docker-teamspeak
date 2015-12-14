@@ -25,6 +25,8 @@ fi
 
 # Change owner folder to make sure container can write to the volume
 chown -R teamspeak.teamspeak /data/teamspeak/
+# Change permission folder to make sure container can write to the volume
+chmod 755 -R /data/teamspeak 
 
 cd /opt/teamspeak
 exec /usr/bin/env LD_LIBRARY_PATH="/opt/teamspeak" /opt/teamspeak/ts3server_linux_amd64 inifile=/data/ts3server.ini logpath=/data/logs disable_db_logging=0
