@@ -21,6 +21,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy --no-install-recommends c
   && mv /tmp/teamspeak3-server_linux-amd64 /opt/teamspeak \
   && apt-get clean \
   && rm -rf /var/lib/apt /tmp/* /var/tmp/*
+  
+
+ # Change owner folder to make sure container can write to the volume
+RUN chown -R teamspeak.teamspeak /data/teamspeak/
+# Change permission folder to make sure container can write to the volume
+RUN chmod 755 -R /data/teamspeak  
 
 # Add custom files
 COPY files/root /
