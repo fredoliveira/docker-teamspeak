@@ -23,6 +23,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy --no-install-recommends c
   && rm -rf /var/lib/apt /tmp/* /var/tmp/*
   
 
+RUN useradd -s /bin/bash -d /data/teamspeak -m teamspeak
  # Change owner folder to make sure container can write to the volume
 RUN chown -R teamspeak.teamspeak /data/teamspeak/
 # Change permission folder to make sure container can write to the volume
