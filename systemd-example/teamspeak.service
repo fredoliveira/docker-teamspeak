@@ -5,11 +5,11 @@ After=docker.service
 
 [Service]
 TimeoutStartSec=0
-ExecStartPre=-/usr/bin/docker pull skardoska/teamspeak
+ExecStartPre=-/usr/bin/docker pull fredoliveira/teamspeak
 ExecStartPre=-/usr/bin/docker stop teamspeak
 ExecStartPre=-/usr/bin/docker kill teamspeak
 ExecStartPre=-/usr/bin/docker rm teamspeak
-ExecStart=/usr/bin/docker run -d --restart=always --name teamspeak -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -v /data/teamspeak:/data skardoska/teamspeak
+ExecStart=/usr/bin/docker run -d --restart=always --name teamspeak -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -v /data/teamspeak:/data fredoliveira/teamspeak
 ExecStop=/usr/bin/docker stop teamspeak
 
 [Install]

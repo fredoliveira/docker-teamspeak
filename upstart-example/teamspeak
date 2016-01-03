@@ -1,0 +1,8 @@
+description "Teamspeak container"
+author "Fred Oliveira"
+start on filesystem and started docker
+stop on runlevel [!2345]
+respawn
+script
+  /usr/bin/docker run -d --restart=always --name teamspeak -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -v /data/teamspeak:/data fredoliveira/teamspeak
+end script
